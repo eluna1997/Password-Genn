@@ -21,7 +21,7 @@ const SYMBOLS_CHAR_CODES = arrayFromLowToHigh(33, 47).concat(
 characterAmountNumber.addEventListener('input', syncCharacterAmount)
 characterAmountRange.addEventListener('input', syncCharacterAmount)
 
-Form.addEventListener('submit' , e => {
+form.addEventListener('submit' , e => {
     e.preventDefault ()
     const characterAmount =characterAmountNumber.value
     const includeUppercase = includeUppercaseElement.checked
@@ -42,7 +42,7 @@ function generatePassword(characterAmount, includeNumbers, includeSymbols, inclu
     const passwordCharacters = []
     for (let i = 0; i < characterAmount; i++ ) {
       const characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
-      passwordCharacters.push(String.fromCharCode(charcterCode))
+      passwordCharacters.push(String.fromCharCode(characterCode))
     }
     return passwordCharacters.join('')
 }
